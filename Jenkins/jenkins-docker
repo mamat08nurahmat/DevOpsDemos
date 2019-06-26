@@ -1,0 +1,9 @@
+# Install Jenkins on Docker
+
+## Install Docker
+```sh
+docker run -d -u root -p 8080:8080 -v jenkins-data:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -v "$HOME":/home --name blueocean jenkinsci/blueocean
+###docker rm -f blueocean
+docker exec -it blueocean bash -c "cat /var/jenkins_home/secrets/initialAdminPassword" 
+```
+
